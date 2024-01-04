@@ -12,7 +12,7 @@ class CreateMiraclesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->nullable()->constrained(); // Set user_id to be nullable
             $table->timestamps();
         });
     }
@@ -22,3 +22,5 @@ class CreateMiraclesTable extends Migration
         Schema::dropIfExists('miracles');
     }
 }
+
+
